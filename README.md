@@ -1,11 +1,6 @@
-# gpc-tokenization-ios
+# allsecure-exchange-tokenization-ios
 
 This SDK enables you to tokenize card data natively from your iOS application to our PCI-certified servers.
-
-## Preparation of Repository
-
-Replace identifiers `gatewayHost` and `tokenizationHost` in `Info.plist` file with your dedicated host names
-
 
 ## Usage
 
