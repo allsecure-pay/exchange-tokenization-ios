@@ -21,8 +21,8 @@
 	<key>NSPrincipalClass</key>
 	<string></string>
 	<key>gatewayHost</key>
-	<string>https://gateway.HOSTNAME.com</string>
+	<string>https://asxgw.com</string>
 	<key>tokenizationHost</key>
-	<string>https://secure.HOSTNAME.com</string>
+	<string>https://secure.asxgw.com</string>
 </dict>
 </plist>
