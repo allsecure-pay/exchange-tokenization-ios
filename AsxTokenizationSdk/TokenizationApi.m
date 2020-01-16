@@ -119,7 +119,7 @@
         
         if (!result) {
             [self logMsg:@"Tokenization returned unexpected response"];
-            NSError *error = [NSError errorWithDomain:@"cloud.paymentgateway.PgcTokenizationSdk" code:GpcRequestFailed userInfo:[NSDictionary dictionaryWithObject:@"Unexpected response" forKey:@"request"]];
+            NSError *error = [NSError errorWithDomain:@"cloud.paymentgateway.PgcTokenizationSdk" code:AsxRequestFailed userInfo:[NSDictionary dictionaryWithObject:@"Unexpected response" forKey:@"request"]];
             dispatch_async(dispatch_get_main_queue(), ^{
                 errorHandler(error);
             });
@@ -128,7 +128,7 @@
         
         if (![[result objectForKey:@"success"] isKindOfClass:[NSNumber class]]) {
             [self logMsg:@"Tokenization returned unexpected response"];
-            NSError *error = [NSError errorWithDomain:@"cloud.paymentgateway.PgcTokenizationSdk" code:GpcRequestFailed userInfo:[NSDictionary dictionaryWithObject:@"Unexpected response" forKey:@"request"]];
+            NSError *error = [NSError errorWithDomain:@"cloud.paymentgateway.PgcTokenizationSdk" code:AsxRequestFailed userInfo:[NSDictionary dictionaryWithObject:@"Unexpected response" forKey:@"request"]];
             dispatch_async(dispatch_get_main_queue(), ^{
                 errorHandler(error);
             });
@@ -146,7 +146,7 @@
                     [userData setObject:fieldError forKey:field];
                 }];
             }];
-            NSError *error = [NSError errorWithDomain:@"cloud.paymentgateway.PgcTokenizationSdk" code:GpcValueValidationFailed userInfo:userData];
+            NSError *error = [NSError errorWithDomain:@"cloud.paymentgateway.PgcTokenizationSdk" code:AsxValueValidationFailed userInfo:userData];
             
             dispatch_async(dispatch_get_main_queue(), ^{
                 errorHandler(error);
@@ -191,13 +191,13 @@
             
             //Check for error HTTP status codes
             if (statusCode == 401) {
-                NSError *error = [NSError errorWithDomain:@"cloud.paymentgateway.PgcTokenizationSdk" code:GpcInvalidPublicIntegrationKey userInfo:[NSDictionary dictionaryWithObject:@"Invalid public integration key" forKey:@"request"]];
+                NSError *error = [NSError errorWithDomain:@"cloud.paymentgateway.PgcTokenizationSdk" code:AsxInvalidPublicIntegrationKey userInfo:[NSDictionary dictionaryWithObject:@"Invalid public integration key" forKey:@"request"]];
                 dispatch_async(dispatch_get_main_queue(), ^{
                     errorHandler(error);
                 });
                 return;
             } else if (statusCode != 200) {
-                NSError *error = [NSError errorWithDomain:@"cloud.paymentgateway.PgcTokenizationSdk" code:GpcRequestFailed userInfo:[NSDictionary dictionaryWithObject:@"Request failed" forKey:@"request"]];
+                NSError *error = [NSError errorWithDomain:@"cloud.paymentgateway.PgcTokenizationSdk" code:AsxRequestFailed userInfo:[NSDictionary dictionaryWithObject:@"Request failed" forKey:@"request"]];
                 dispatch_async(dispatch_get_main_queue(), ^{
                     errorHandler(error);
                 });
@@ -211,7 +211,7 @@
         //Check for valid json
         if (!json) {
             [self logMsg:@"Response has unexpected content"];
-            NSError *error = [NSError errorWithDomain:@"cloud.paymentgateway.PgcTokenizationSdk" code:GpcRequestFailed userInfo:[NSDictionary dictionaryWithObject:@"Unexpected response" forKey:@"request"]];
+            NSError *error = [NSError errorWithDomain:@"cloud.paymentgateway.PgcTokenizationSdk" code:AsxRequestFailed userInfo:[NSDictionary dictionaryWithObject:@"Unexpected response" forKey:@"request"]];
             
             dispatch_async(dispatch_get_main_queue(), ^{
                 errorHandler(error);
@@ -222,7 +222,7 @@
         //Check success indicator
         if (![[json objectForKey:@"success"] isKindOfClass:[NSNumber class]]) {
             [self logMsg:@"Response has unexpected content"];
-            NSError *error = [NSError errorWithDomain:@"cloud.paymentgateway.PgcTokenizationSdk" code:GpcRequestFailed userInfo:[NSDictionary dictionaryWithObject:@"Unexpected response" forKey:@"request"]];
+            NSError *error = [NSError errorWithDomain:@"cloud.paymentgateway.PgcTokenizationSdk" code:AsxRequestFailed userInfo:[NSDictionary dictionaryWithObject:@"Unexpected response" forKey:@"request"]];
             
             dispatch_async(dispatch_get_main_queue(), ^{
                 errorHandler(error);

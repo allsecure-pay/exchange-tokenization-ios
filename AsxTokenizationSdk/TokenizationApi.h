@@ -6,20 +6,20 @@
 #import "CardData.h"
 #import "Token.h"
 
-typedef void (^GpcLoggerFunc) (NSString* logMsg);
+typedef void (^AsxLoggerFunc) (NSString* logMsg);
 typedef enum {
-    GpcInvalidPublicIntegrationKey = -401,
-    GpcRequestFailed = -500,
-    GpcValueValidationFailed = 1002,
-    GpcTokenizationNotSupported = 3002
-} GpcErrorCode;
+    AsxInvalidPublicIntegrationKey = -401,
+    AsxRequestFailed = -500,
+    AsxValueValidationFailed = 1002,
+    AsxTokenizationNotSupported = 3002
+} AsxErrorCode;
 
 @interface TokenizationApi : NSObject
 
 @property (strong, nonatomic) NSString* gatewayHost;
 @property (strong, nonatomic) NSString* tokenizationHost;
 @property (strong, nonatomic) NSString* publicIntegrationKey;
-@property (strong, nonatomic) GpcLoggerFunc loggerFunc;
+@property (strong, nonatomic) AsxLoggerFunc loggerFunc;
 
 - (instancetype)initWithPublicIntegrationKey:(NSString *)publicIntegrationKey;
 - (instancetype)initWithGatewayHost:(NSString *)gatewayHost TokenizationHost:(NSString *)tokenizationHost AndPublicIntegrationKey:(NSString *)publicIntegrationKey;

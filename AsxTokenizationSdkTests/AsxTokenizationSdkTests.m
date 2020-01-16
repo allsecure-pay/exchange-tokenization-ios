@@ -1,18 +1,18 @@
 //
-//  GpcTokenizationSdkTests.m
-//  GpcTokenizationSdkTests
+//  AsxTokenizationSdkTests.m
+//  AsxTokenizationSdkTests
 //
 
 #import <XCTest/XCTest.h>
-#import "../GpcTokenizationSdk/Token.h"
-#import "../GpcTokenizationSdk/CardData.h"
-#import "../GpcTokenizationSdk/TokenizationApi.h"
+#import "../AsxTokenizationSdk/Token.h"
+#import "../AsxTokenizationSdk/CardData.h"
+#import "../AsxTokenizationSdk/TokenizationApi.h"
 
-@interface GpcTokenizationSdkTests : XCTestCase
+@interface AsxTokenizationSdkTests : XCTestCase
 
 @end
 
-@implementation GpcTokenizationSdkTests
+@implementation AsxTokenizationSdkTests
 
 - (void)setUp {
     [super setUp];

@@ -10,7 +10,7 @@ Instantiate the `TokenizationApi` class with your public integration key (and op
 
 ```objective-c
 
-#import <GpcTokenizationSdk.h>
+#import <AsxTokenizationSdk.h>
 
 ...
 
